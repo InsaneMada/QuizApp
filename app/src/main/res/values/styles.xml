@@ -6,9 +6,58 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="buttonTint">@color/colorAccent</item>
-
-
-
+        <item name="android:textStyle">italic</item>
     </style>
 
+    <!-- EditText style -->
+    <style name="EditTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/edit_marginBottom</item>
+        <item name="android:backgroundTint">@color/edit_hint</item>
+        <item name="android:fontFamily">@string/text_font</item>
+        <item name="android:inputType">textCapWords</item>
+        <item name="android:padding">@dimen/edit_text_padding</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textColorHint">@color/edit_hint</item>
+    </style>
+
+    <!-- Questions TextView style -->
+    <style name="QuestionsTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@string/text_font</item>
+        <item name="android:padding">@dimen/text_view_padding</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:textSize">@dimen/text_font_size</item>
+    </style>
+
+    <!-- Submit and Reset buttons style -->
+    <style name="ButtonsStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@string/text_font</item>
+        <item name="android:textSize">@dimen/button_font_size</item>
+    </style>
+
+    <!-- RadioButtons Style -->
+    <style name="RadioButtonsStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:buttonTint">@color/tint_color</item>
+        <item name="android:fontFamily">@string/text_font</item>
+        <item name="android:textColor">@color/tint_color</item>
+        <item name="android:textSize">@dimen/button_font_size</item>
+    </style>
+
+    <!-- CheckBox Style -->
+    <style name="CheckBoxStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/checkbox_margin_left</item>
+        <item name="android:buttonTint">@color/tint_color</item>
+        <item name="android:fontFamily">@string/text_font</item>
+        <item name="android:textColor">@color/tint_color</item>
+        <item name="android:textSize">20sp</item>
+    </style>
 </resources>

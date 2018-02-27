@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     // Quiz user name
     EditText nameEditText;
 
-    // Quiz submit button
+    // Buttons
     Button submitButton;
 
     // Quiz score
@@ -71,7 +71,9 @@ public class MainActivity extends AppCompatActivity {
         q4A3 = (CheckBox) findViewById(R.id.q4_a3);
         q5EditText = (EditText) findViewById(R.id.q5_answer);
         q6EditText = (EditText) findViewById(R.id.q6_answer);
+
     }
+
     /*
     * this method is used when the RadioButtons are checked
     */
@@ -104,32 +106,34 @@ public class MainActivity extends AppCompatActivity {
             case R.id.q2_a3:
                 if (checked)
                     break;
+
         }
     }
+
     /**
      * This method is for the submit button and showing the final score
      *
      * @param v
      */
     public void submitScore(View v) {
+        int totalScore = score();
 
         String name = nameEditText.getText().toString();
 
-        int totalScore = score();
-
         if (score == 6) {
-            Toast.makeText(getApplicationContext(),
-                    getString(R.string.message_1) + " " + name + "\n" +
-                            getString(R.string.message_2), Toast.LENGTH_LONG).show();
-        }
-        else {
-            Toast.makeText(getApplicationContext(),
-                    getString(R.string.message_3) + " " + name + "\n" +
-                            getString(R.string.message_4) + " " + totalScore + " " +
-                            getString(R.string.message_5) + "\n" + getString(R.string.message_6), Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), getString(R.string.message_1) + " " + name + "\n" +
+                    getString(R.string.message_2), Toast.LENGTH_LONG).show();
+        } else if (score == 0) {
+            Toast.makeText(getApplicationContext(), getString(R.string.message_7), Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(getApplicationContext(), getString(R.string.message_3) + " " +
+                    name + "\n" + getString(R.string.message_4) + " " + totalScore + " " +
+                    getString(R.string.message_5) + "\n" + getString(R.string.message_6), Toast.LENGTH_LONG).show();
         }
         submitButton.setEnabled(false);
+
     }
+
     /*
      * Calculating total score
      */
@@ -151,17 +155,18 @@ public class MainActivity extends AppCompatActivity {
         if (isQ4A1 && isQ4A3) {
             score += 1;
         }
-        if ("Australia".equals(q5EditText.getText().toString())){
+        if ("Australia".equals(q5EditText.getText().toString())) {
             score += 1;
         }
         if ("Istanbul".equals(q6EditText.getText().toString())) {
             score += 1;
-        }
-        else {
+        } else {
             score += 0;
         }
         return score;
+
     }
+
     /*
     * A method that resets the quiz
     */
@@ -187,5 +192,6 @@ public class MainActivity extends AppCompatActivity {
 
         // Enable submitButton
         submitButton.setEnabled(true);
+
     }
 }

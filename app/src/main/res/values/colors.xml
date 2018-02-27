@@ -6,7 +6,5 @@
     <color name="tint_color">#FFFFFF</color>
     <color name="text_color">#FFFFFF</color>
     <color name="edit_hint">#B2B2B2</color>
-
     <color name="background">#26292d</color>
-
 </resources>
