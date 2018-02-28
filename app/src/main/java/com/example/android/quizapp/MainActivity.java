@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     Button submitButton;
 
     // Quiz score
-    int score = 0;
+    int score;
 
     // Question 1
     RadioButton q1A1;
@@ -138,27 +138,22 @@ public class MainActivity extends AppCompatActivity {
      * Calculating total score
      */
     public int score() {
-        boolean isQ3A2 = q3A2.isChecked();
-        boolean isQ3A3 = q3A3.isChecked();
-        boolean isQ4A1 = q4A1.isChecked();
-        boolean isQ4A3 = q4A3.isChecked();
-
         if (q1A2.isChecked()) {
             score += 1;
         }
         if (q2A1.isChecked()) {
             score += 1;
         }
-        if (isQ3A2 && isQ3A3) {
+        if (q3A2.isChecked() && q3A3.isChecked() && !q3A1.isChecked()) {
             score += 1;
         }
-        if (isQ4A1 && isQ4A3) {
+        if (q4A1.isChecked() && q4A3.isChecked() && !q4A2.isChecked()) {
             score += 1;
         }
-        if ("Australia".equals(q5EditText.getText().toString())) {
+        if ("Australia".equals(q5EditText.getText().toString().trim())) {
             score += 1;
         }
-        if ("Istanbul".equals(q6EditText.getText().toString())) {
+        if ("Istanbul".equals(q6EditText.getText().toString().trim())) {
             score += 1;
         } else {
             score += 0;
